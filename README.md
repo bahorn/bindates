@@ -27,7 +27,7 @@ schedule with firebase if you wanted.
 With that all decided, run the following with all your settings:
 ```
 firebase functions:config:set twilio.number=<YOUR NUMBER> twilio.sid=<YOUR SID> twilio.token=<YOUR TOKEN> bins.user_agent=<HTTP USER AGENT>
-firebase deploy --only http
+firebase deploy
 ```
 
 Now make Zapier or whatever call it once per day!
