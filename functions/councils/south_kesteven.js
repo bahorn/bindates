@@ -24,7 +24,7 @@ module.exports = async (params) => {
   x.driver(xrayDriver(address));
 
   return new Promise(resolve => {
-    x('http://www.southkesteven.gov.uk/index.aspx?articleid=8930', '.icon--bin', ['p'])(
+    x('http://www.southkesteven.gov.uk/index.aspx?articleid=9248', '.icon--bin', ['p'])(
       (err, info) => {
         const date_str = info[0].split('Your next bin collection date is ')[1];
         let date = null;
