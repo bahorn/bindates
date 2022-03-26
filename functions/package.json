@@ -10,7 +10,7 @@
   },
   "dependencies": {
     "firebase-admin": "^10.0.2",
-    "firebase-functions": "^3.2.0",
+    "firebase-functions": "^3.19.0",
     "request-x-ray": "^0.1.4",
     "twilio": "^3.33.4",
     "x-ray": "^2.1.0"

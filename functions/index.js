@@ -31,6 +31,9 @@ exports.httpBinDates = functions.https.onRequest((req, res) => {
   councils[council](req.body).then((result) => {
     /* Check if the period is right. */
     resp = result;
+    if (resp == {}) {
+      res.send({});
+    }
     if (result['date'] <= (Date.now()+(period || 1)*day)) {
       sendMessage(number, result['date'], result['times'], result['type'])
       resp['sms'] = true;

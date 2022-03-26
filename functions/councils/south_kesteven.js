@@ -26,12 +26,20 @@ module.exports = async (params) => {
   return new Promise(resolve => {
     x('http://www.southkesteven.gov.uk/index.aspx?articleid=9248', '.icon--bin', ['p'])(
       (err, info) => {
+        if (err) {
+          resolve({});
+        }
         const date_str = info[0].split('Your next bin collection date is ')[1];
         let date = null;
         if (["Tomorrow"].includes(date_str)) {
           date = new Date(new Date().getTime() + 24 * 60 * 60 * 1000);
         } else {
-          date = Date.Parse(date_str);
+          console.log(date_str);
+          try {
+            date = Date.Parse(date_str);
+          } catch {
+            date = date_str;
+          }
         }
         const type = info[1].split(' - ')[1];
         const times = info[2];
